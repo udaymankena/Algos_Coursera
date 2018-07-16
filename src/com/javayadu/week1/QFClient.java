@@ -9,15 +9,15 @@ public class QFClient {
 		
 		//QF uf = new QF(10);
 		// using the same client for Quick Union as well
-		QU uf = new QU(10);
+		WQU uf = new WQU(10);
 		
 		uf.connect(1, 4);
 		uf.connect(2, 6);
-		uf.connect(6, 8);
+		uf.connect(1, 2);
 		uf.connect(7, 3);
 		
-		System.out.println(uf.isConnected(2, 8));
-		//System.out.println(uf.root(8));
+		System.out.println(uf.isConnected(1, 6));
+		System.out.println(uf.root(6)); //made root() public for testing
 
 	}
 
