@@ -1,4 +1,7 @@
-package com.javayadu.week1.ass;
+/*package com.javayadu.week1.ass;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.util.Scanner;*/
 
 public class Percolation {
 	   
@@ -7,7 +10,7 @@ public class Percolation {
 	   private final boolean[][] grid_full;
 	   private final boolean[][] grid_bot_con;
 	   private int no_of_open_sites = 0;
-	   private int grid_length = 0;
+	   private final int grid_length;
 	   private boolean percolates = false;
 	   public Percolation(int n) {
 		   // create n-by-n grid, with all sites blocked
@@ -190,7 +193,7 @@ public class Percolation {
 				  //if the smaller grid is full, convert the bigger to full
 				  // if the bigger is full, it'll remain full
 				  if(	grid_full[root_r1c1[0]][root_r1c1[1]] ) {
-					  grid_bot_con[root_r2c2[0]][root_r2c2[1]] = true;
+					  grid_full[root_r2c2[0]][root_r2c2[1]] = true;
 				  }
 				// marking bottom connected
 				  if(grid_bot_con[root_r1c1[0]][root_r1c1[1]]) {
@@ -227,11 +230,36 @@ public class Percolation {
 	   }
 
 	   public static void main(String[] args) {
-		   // test client (optional)
-		   Percolation p = new Percolation(18);
-		   for(int i=1; i<=17; i++)
-			   p.open(i, 1);
-		   System.out.println("percolates: " + p.percolates());
+		  /* // test client (optional)
+		   Scanner scanner = null;
+		   try {
+			scanner = new Scanner(new File("input6.txt"));
+		    } catch (FileNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		    }
+		   int len = scanner.nextInt();
+		   Percolation p = new Percolation(len);
+		   System.out.println(len);
+		   while(scanner.hasNextLine()){
+			   String line = scanner.nextLine();
+			   line = line.trim();
+			   if(line.equals(""))
+				   continue;
+			   String[] points = line.split(" ");
+			   int a = Integer.parseInt(points[0]);
+			   int b = Integer.parseInt(points[1]);
+			   p.open(a,b);
+			   System.out.println(a + "," + b);
+			   int[] root = p.root(a-1,b-1);
+			   System.out.println("root: " + (root[0]+1) + "," + (root[1]+1));
+			   System.out.println("isFull: " + p.isFull(a, b)); 
+			   System.out.println("isbotcon: " + p.isbotCon(a, b));
+			   System.out.println("percolates: " + p.percolates());
+		   }
+		   System.out.println(p.root(0,5)[0] + "," +  p.root(0,5)[1]);
+		   System.out.println(p.grid_full[0][5]);
+		   
 		   /*p.open(1,1);
 		   System.out.println("1,1");
 		   System.out.println("isFull: " + p.isFull(1, 1)); 
