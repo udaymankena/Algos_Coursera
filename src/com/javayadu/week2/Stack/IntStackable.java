@@ -1,4 +1,4 @@
-package com.javayadu.week2;
+package com.javayadu.week2.Stack;
 
 public interface IntStackable {
 

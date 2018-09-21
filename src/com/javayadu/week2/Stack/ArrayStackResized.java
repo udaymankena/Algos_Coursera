@@ -1,4 +1,4 @@
-package com.javayadu.week2;
+package com.javayadu.week2.Stack;
 
 public class ArrayStackResized implements IntStackable {
 	private int[] stack;
