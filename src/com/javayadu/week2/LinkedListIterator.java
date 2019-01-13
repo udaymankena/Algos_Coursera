@@ -26,7 +26,9 @@ public class LinkedListIterator<Item> implements Iterable<Item>{
 		public Item next() {
 			// TODO Auto-generated method stub
 			if(hasNext()) {
+				System.out.println("current_before: " + current.val);
 				current = current.next;
+				System.out.println("current_next: " + current.val);
 				return current.val;
 			}
 				

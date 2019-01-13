@@ -1,7 +1,7 @@
-/*package com.javayadu.week1.ass;
+package com.javayadu.week1.ass;
 import java.io.File;
 import java.io.FileNotFoundException;
-import java.util.Scanner;*/
+import java.util.Scanner;
 
 public class Percolation {
 	   
