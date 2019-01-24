@@ -20,9 +20,11 @@ public class MergeSort {
 		return subarr;
 	}
 
-	public int[] merge(int[] arr1, int[] arr2) {
+	private int[] merge(int[] arr1, int[] arr2) {
 		int[] arr1_sorted = sort(arr1);
 		int[] arr2_sorted = sort(arr2);
+		assert isSorted(arr1_sorted);
+		assert isSorted(arr2_sorted);
 		int[] arr_sorted = new int[arr1.length + arr2.length];
 		int i=0, j=0, k=0;
 		while(k < arr_sorted.length) {
@@ -39,6 +41,15 @@ public class MergeSort {
 		}
 		return arr_sorted;
 		
+	}
+
+	private boolean isSorted(int[] arr) {
+		// TODO Auto-generated method stub
+		for(int i=1;i<arr.length; i++) {
+			if(arr[i] < arr[i-1])
+				return false;
+		}
+		return true;
 	}
 	
 	

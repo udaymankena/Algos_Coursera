@@ -85,7 +85,10 @@ public class Deque<Item> implements Iterable<Item> {
 			// TODO Auto-generated constructor stub
 			   iter_head = new Node();
 			   iter_head.val = null;
-			   iter_head.next = head;
+			   iter_head.next = head; 
+			   // iter_head is pointing to a non-existing node before the head
+			   // works well...but is it the right way to implement?
+			   
 		}
 		   
 
@@ -111,7 +114,7 @@ public class Deque<Item> implements Iterable<Item> {
 		   Deque<Integer> deq = new Deque<>();
 		   deq.addFirst(1);
 		   deq.addFirst(2);
-		   deq.removeFirst();
+		   //deq.removeFirst();
 		   deq.addLast(2);
 		   deq.addFirst(3);
 		   deq.addFirst(4);
