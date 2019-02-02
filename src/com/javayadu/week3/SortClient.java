@@ -6,6 +6,7 @@ public class SortClient {
 		// TODO Auto-generated method stub
 		//int[] arr = {10,9,8,7,6,5,4,3,2,1,7};
 		Integer[] arr = {10,9,18,70,6,15,4,3,12,1,7};
+		//Integer[] arr = {10,9,18};
 		MergeSort_lec ms = new MergeSort_lec();
 		display(ms.sort(arr));
 		//Object obj = new Integer(10);
