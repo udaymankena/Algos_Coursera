@@ -1,4 +1,4 @@
-//package com.javayadu.week1.ass;
+package com.javayadu.week1.ass;
 import edu.princeton.cs.algs4.StdRandom;
 import edu.princeton.cs.algs4.StdStats;
 public class PercolationStats {
