@@ -2,13 +2,13 @@ package com.javayadu.graphs;
 
 import java.util.Stack;
 
-public class Paths {
+public class DfsPaths {
 	Graph graph;
 	boolean[] visited;
 	int[] edge_to;
 	int s; // source vertex
 	
-	public Paths(Graph graph, int s) {
+	public DfsPaths(Graph graph, int s) {
 		this.graph = graph;
 		this.s = s;
 		visited = new boolean[graph.V()];
