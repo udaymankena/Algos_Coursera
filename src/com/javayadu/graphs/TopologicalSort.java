@@ -1,0 +1,45 @@
+package com.javayadu.graphs;
+
+
+import java.util.Stack;
+
+import com.javayadu.graphs.Graph;
+
+public class TopologicalSort {
+	Graph graph;
+	boolean[] visited;
+	int[] edge_to;
+	int s; // source vertex
+	Stack<Integer> reversePostOrder;
+	
+	public TopologicalSort(Graph graph) {
+		this.graph = graph;
+		this.s = s;
+		visited = new boolean[graph.V()];
+		edge_to = new int[graph.V()];
+		reversePostOrder = new Stack<Integer>();
+		for(int i=0; i<graph.V(); i++)
+			if(!visited[i])
+				dfs(i);
+	}
+
+	private void dfs(int s){ // find vertices connected to source 's'
+		visited[s] = true; // mark the current vertex as visited
+		for(int w: graph.adj(s) ) { // Is 'w' a linkedlist node or an integer?
+			if(!visited[w])
+				dfs(w);
+			edge_to[w] = s; // getting to w from s - marking it
+		}
+		reversePostOrder.push(s);
+	}
+	
+	public String reversePostOrder() {
+		String rpo = "";
+		while(!reversePostOrder.isEmpty())
+			rpo += reversePostOrder.pop() + " ";
+		return rpo;
+	}
+	
+
+}
+

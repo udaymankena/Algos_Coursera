@@ -13,11 +13,14 @@ public class GraphTest {
 		};
 		add_edges(g,edges);
 		
-		//DfsPaths ps = new DfsPaths(g,1);
+		/*DfsPaths ps = new DfsPaths(g,1);
 		BfsPaths ps = new BfsPaths(g,1);
 		
 		System.out.println(ps.connections());
-		System.out.println( pathStr(2, ps) );
+		System.out.println( pathStr(2, ps) ); */
+		// Topological Sort test
+		TopologicalSort ts = new TopologicalSort(g);
+		System.out.println(ts.reversePostOrder());
 	}
 	
 	private static void add_edges( Graph g ,int[][] edges) {
