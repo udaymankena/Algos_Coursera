@@ -34,5 +34,15 @@ public class DiGraph {
 		return E;
 	}
 	
+	public DiGraph reverse() {
+		DiGraph rg = new DiGraph(V);
+		for(int i=0; i<V; i++) {
+			for(int v:adj_list[i]) {
+				rg.addEdge(v, i);
+			}
+		}
+		return rg;
+	}
+	
 }
 

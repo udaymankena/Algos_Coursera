@@ -19,8 +19,8 @@ public class GraphTest {
 		System.out.println(ps.connections());
 		System.out.println( pathStr(2, ps) ); */
 		// Topological Sort test
-		TopologicalSort ts = new TopologicalSort(g);
-		System.out.println(ts.reversePostOrder());
+		//TopologicalSort ts = new TopologicalSort(g);
+		//System.out.println(ts.reversePostOrder());
 	}
 	
 	private static void add_edges( Graph g ,int[][] edges) {

@@ -6,13 +6,13 @@ import java.util.Stack;
 import com.javayadu.graphs.Graph;
 
 public class TopologicalSort {
-	Graph graph;
+	DiGraph graph;
 	boolean[] visited;
 	int[] edge_to;
 	int s; // source vertex
 	Stack<Integer> reversePostOrder;
 	
-	public TopologicalSort(Graph graph) {
+	public TopologicalSort(DiGraph graph) {
 		this.graph = graph;
 		this.s = s;
 		visited = new boolean[graph.V()];
@@ -33,10 +33,18 @@ public class TopologicalSort {
 		reversePostOrder.push(s);
 	}
 	
-	public String reversePostOrder() {
+	public String reversePostOrder_str() {
 		String rpo = "";
 		while(!reversePostOrder.isEmpty())
 			rpo += reversePostOrder.pop() + " ";
+		return rpo;
+	}
+	
+	public int[] reversePostOrder() {
+		int[] rpo = new int[graph.V()];
+		int i=0;
+		while(!reversePostOrder.isEmpty())
+			rpo[i++] = reversePostOrder.pop();
 		return rpo;
 	}
 	
