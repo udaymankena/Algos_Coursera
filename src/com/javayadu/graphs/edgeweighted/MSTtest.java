@@ -14,9 +14,9 @@ public class MSTtest {
 		addEdges(g,4,5,0.35);
 		addEdges(g,6,2,0.40);
 		
-		MST mst = new MST(g);
+		Kruskals mst = new Kruskals(g);
 		
-		for(Edge e: g.adj(5)) {
+		for(Edge e: mst.getMst() ) {
 			System.out.println(e);
 		}
 		
