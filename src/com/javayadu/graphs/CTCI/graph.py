@@ -1,7 +1,6 @@
 
 
 class Graph():
-    #nodes = None
 
     def __init__(self,nodes,digraph=False):
         self.nodes = nodes
@@ -62,7 +61,7 @@ def main():
     #     print(n)
     # print(g.digraph)
     for n in g.nodes[9].adj:
-        print n.val
+        print(n.val)
 
 
 if __name__ == '__main__':
