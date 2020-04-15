@@ -62,7 +62,7 @@ class BinaryTree:
 
 def get_sample_binary_tree():
     root = BinaryTree(1)
-    root.left = BinaryTree(2)
+    root.left = BinaryTree(-2)
     root.right = BinaryTree(3)
     root.left.left = BinaryTree(4)
     root.left.right = BinaryTree(5)
